@@ -11,6 +11,7 @@ class Body extends React.Component {
   handleFormSubmit(name, description) {
     console.log(name, description)
 
+    //  method converts a JavaScript value to a JSON string
     let body = JSON.stringify({ item: {name: name, description: description} })
     fetch('http://localhost:3000/items', {
       method: 'POST',
