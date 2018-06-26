@@ -23,7 +23,7 @@ class Body extends React.Component {
     })
     .then((response) => { return response.json() })
     // when form is submitted, addNewItem() is called to save items to db
-    .then((item)     => { this.addnewItem(item) })
+    .then((item)     => { this.addNewItem(item) })
   }
 
   addNewItem(item) {
@@ -40,7 +40,16 @@ class Body extends React.Component {
       }
     })
     .then((response) => {
+      // when item is deleted, deleteItem will remove it from UI
+      this.deleteItem(id)
       console.log(`Item ${id} was deleted`)
+    })
+  }
+
+  deleteItem(id) {
+    newItems = this.state.items.filter((item) => item.id !== id)
+    this.setState({
+      items: newItems
     })
   }
 
