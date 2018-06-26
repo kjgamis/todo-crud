@@ -6,6 +6,7 @@ class Body extends React.Component {
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.addNewItem       = this.addNewItem.bind(this)
+    this.handleDelete     = this.handleDelete.bind(this)
   }
 
   handleFormSubmit(name, description) {
@@ -31,6 +32,18 @@ class Body extends React.Component {
     })
   }
 
+  handleDelete(id) {
+    fetch(`http://localhost:3000/items/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+      console.log(`Item ${id} was deleted`)
+    })
+  }
+
   componentDidMount() {
     fetch('/items.json')
     .then((response) => { return response.json() })
@@ -40,7 +53,7 @@ class Body extends React.Component {
   render() {
     return(
       <div>
-        <AllItems items={ this.state.items }/>
+        <AllItems items={ this.state.items } handleDelete={ this.handleDelete }/>
         <NewItems handleFormSubmit={ this.handleFormSubmit }/>
       </div>
     )
