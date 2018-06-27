@@ -11,7 +11,6 @@ const AllItems = (props) => {
 
   return(
     <div>
-      <h1>To do list</h1>
       {items}
     </div>
   )

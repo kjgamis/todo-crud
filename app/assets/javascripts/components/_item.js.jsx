@@ -21,14 +21,14 @@ class Item extends React.Component {
   }
 
   render() {
-    let name        = this.state.editable ? <input type="text" ref={input => this.name = input} defaultValue={this.props.item.name} /> : <h3>{this.props.item.name}</h3>
-    let description = this.state.editable ? <input type="text" ref={input => this.description = input} defaultValue={this.props.item.description}/> : <p>{this.props.item.description}</p>
+    let name        = this.state.editable ? <input class="input" type="text" ref={input => this.name = input} defaultValue={this.props.item.name} /> : <h3 className="name">{this.props.item.name}</h3>
+    let description = this.state.editable ? <input class="input" type="text" ref={input => this.description = input} defaultValue={this.props.item.description}/> : <p className="description">{this.props.item.description}</p>
     return(
       <div>
         { name }
         { description }
-        <button onClick={ () => this.handleEdit()}>{this.state.editable ? 'Submit' : 'Edit'}</button>
-        <button onClick={ () => this.props.handleDelete(this.props.item.id) }>Delete</button>
+        <button className="edit submit" onClick={ () => this.handleEdit()}>{this.state.editable ? 'Submit' : 'Edit'}</button>
+        <button className="delete" onClick={ () => this.props.handleDelete(this.props.item.id) }>Delete</button>
       </div>
     )
   }

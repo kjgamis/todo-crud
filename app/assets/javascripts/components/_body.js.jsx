@@ -87,8 +87,8 @@ class Body extends React.Component {
   render() {
     return(
       <div>
-        <AllItems items={ this.state.items } handleDelete={ this.handleDelete } handleUpdate={ this.handleUpdate }/>
         <NewItems handleFormSubmit={ this.handleFormSubmit }/>
+        <AllItems items={ this.state.items } handleDelete={ this.handleDelete } handleUpdate={ this.handleUpdate }/>
       </div>
     )
   }
