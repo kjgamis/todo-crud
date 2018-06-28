@@ -29,8 +29,8 @@ class Item extends React.Component {
           { name }
           { description }
         </div>
-        <button className="edit submit" onClick={ () => this.handleEdit()}>{this.state.editable ? 'Done' : 'Edit'}</button>
-        <button className="delete" onClick={ () => this.props.handleDelete(this.props.item.id) }>x</button>
+        <button className="edit submit" onClick={ () => this.handleEdit()}>{this.state.editable ? '✔' : '✎'}</button>
+        <button className="delete" onClick={ () => this.props.handleDelete(this.props.item.id) }> × </button>
       </div>
     )
   }
