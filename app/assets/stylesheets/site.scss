@@ -1,3 +1,61 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+.container {
+  margin: 1em 20%;
+}
+
+.input {
+  font-size: 1em;
+  padding: 0.5em 0.5em 0.5em 1em;
+  width: 35%;
+}
+
+.input-name {
+  width: 30%;
+  font-weight: 500;
+}
+.input-description {
+  width: 50%;
+  font-weight: 400;
+}
+
+button {
+  padding: 0.5em;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 90% 5% 5%;
+  align-items: center;
+
+}
+
+.single-item {
+  display: grid;
+  grid-template-columns: 90% 5% 5%;
+  align-items: center;
+  .name {
+    font-size: 1em;
+    font-weight: 800;
+    margin: 1em 0 0 1em;
+  }
+  .description {
+    font-size: 0.65em;
+    font-weight: 200;
+    margin: 0.5em 1.5em 0.5em 1.75em;
+  }
+}
