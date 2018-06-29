@@ -17,7 +17,8 @@ class Body extends React.Component {
 
     //  method converts a JavaScript value to a JSON string
     let body = JSON.stringify({ item: {name: name, description: description} })
-    fetch('http://localhost:3000/items', {
+    // when form is submitted, addNewItem() is called to save items to db
+    fetch('/items', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +26,7 @@ class Body extends React.Component {
       body: body,
     })
     .then((response) => { return response.json() })
-    // when form is submitted, addNewItem() is called to save items to db
+    // addNewItem() updates the state to load new item to page immediately
     .then((item)     => { this.addNewItem(item) })
   }
 
@@ -36,7 +37,7 @@ class Body extends React.Component {
   }
 
   handleDelete(id) {
-    fetch(`http://localhost:3000/items/${id}`, {
+    fetch(`/items/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -57,7 +58,7 @@ class Body extends React.Component {
   }
 
   handleUpdate(item) {
-    fetch(`http://localhost:3000/items/${item.id}`, {
+    fetch(`/items/${item.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
