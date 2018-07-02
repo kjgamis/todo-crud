@@ -1,7 +1,7 @@
 const NewItems = (props) => {
   let formFields = {}
   let onEnterPress = (e) => {
-    if(e.keyCode == 13 && e.shiftKey == false) {
+    if(e.keyCode == enter && e.shiftKey == false) {
       e.preventDefault();
       this.myFormRef.submit();
       }
