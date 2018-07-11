@@ -79,6 +79,7 @@ class Body extends React.Component {
     })
   }
 
+  // load all items in database
   componentDidMount() {
     fetch('/items.json')
     .then((response) => { return response.json() })
