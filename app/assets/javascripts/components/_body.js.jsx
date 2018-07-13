@@ -30,12 +30,14 @@ class Body extends React.Component {
     .then((item)     => { this.addNewItem(item) })
   }
 
+  // add items through 'concat' on the UI
   addNewItem(item) {
     this.setState({
       items: this.state.items.concat(item)
     })
   }
 
+  // delete item from database
   handleDelete(id) {
     fetch(`/items/${id}`, {
       method: 'DELETE',
@@ -50,6 +52,7 @@ class Body extends React.Component {
     })
   }
 
+  // change in state to delete item in UI
   deleteItem(id) {
     newItems = this.state.items.filter((item) => item.id !== id)
     this.setState({
@@ -57,6 +60,7 @@ class Body extends React.Component {
     })
   }
 
+  // edit item info in database
   handleUpdate(item) {
     fetch(`/items/${item.id}`, {
       method: 'PUT',
@@ -71,6 +75,7 @@ class Body extends React.Component {
     })
   }
 
+  // update state in UI
   updateItem(item) {
     let newItems = this.state.items.filter((i) => i.id !== item.id)
     newItems.push(item)
