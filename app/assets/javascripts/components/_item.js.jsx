@@ -2,12 +2,14 @@ class Item extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      // default uneditable
       editable: false
     }
     this.handleEdit = this.handleEdit.bind(this)
   }
 
   handleEdit() {
+    // change value of item in database by callinf handleUpdate from body.js
     if (this.state.editable) {
       let name        = this.name.value
       let description = this.description.value
