@@ -6,7 +6,7 @@ const Main = (props) => {
         <Body />
       </div>
       <footer>
-        <h5>created by: <span>Karen Gamis</span></h5>
+        <h5><span>KJG</span> 2018</h5>
         <h5>CRUD React-Rails App</h5>
       </footer>
     </div>
